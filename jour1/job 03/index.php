@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tableau des Variables</title>
+
     <style>
         table {
             width: 100%;
@@ -17,8 +13,7 @@
             background-color: #f2f2f2;
         }
     </style>
-</head>
-<body>
+
     <?php
     // Définition des variables
     $element_du_tableau = [
@@ -71,5 +66,3 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-</body>
-</html>

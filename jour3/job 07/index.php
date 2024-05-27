@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Décalage de caractères</title>
-</head>
-<body>
+
     <?php
     // Définir la variable de type string
     $str = "Certaines choses changent, et d'autres ne changeront jamais.";
@@ -23,5 +17,4 @@
     // Afficher le résultat
     echo $result;
     ?>
-</body>
-</html>
+

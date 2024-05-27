@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Nombres Premiers</title>
-</head>
-<body>
+
     <?php
     // Fonction pour vérifier si un nombre est premier
     function isPrime($number) {
@@ -26,5 +20,4 @@
         }
     }
     ?>
-</body>
-</html>
+

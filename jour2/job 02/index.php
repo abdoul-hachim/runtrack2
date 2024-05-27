@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Affichage des Nombres</title>
-</head>
-<body>
+
     <?php
     // Définir les nombres à exclure
     $exclusions = [26, 37, 88, 1111, 3233];
@@ -17,5 +11,3 @@
         }
     }
     ?>
-</body>
-</html>

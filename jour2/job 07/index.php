@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Triangle</title>
+
+
     <style>
         pre {
             font-family: monospace;
         }
     </style>
-</head>
-<body>
+
     <?php
     // Définir la hauteur du triangle
     $hauteur = 5;
@@ -29,5 +25,4 @@
     }
     echo "</pre>";
     ?>
-</body>
-</html>
+

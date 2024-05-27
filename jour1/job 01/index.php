@@ -51,7 +51,4 @@ $myBool= fals;
 echo $myBool;
 //job 02
 ?>
-<?php
 
-
-?>

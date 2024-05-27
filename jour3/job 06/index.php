@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Inverser une chaîne</title>
-</head>
-<body>
+
     <?php
     // Définir la variable de type string
     $str = "Les choses que l'on possède finissent par nous posséder.";
@@ -20,5 +14,3 @@
     // Afficher le résultat
     echo $result;
     ?>
-</body>
-</html>

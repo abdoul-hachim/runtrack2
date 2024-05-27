@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Afficher les voyelles</title>
-</head>
-<body>
+
     <?php
     // Définir la variable de type string
     $str = "I'm sorry Dave I'm afraid I can't do that";
@@ -25,5 +19,4 @@
     // Afficher le résultat
     echo $result;
     ?>
-</body>
-</html>
+
