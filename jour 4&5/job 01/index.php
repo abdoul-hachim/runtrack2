@@ -17,9 +17,21 @@
     </form>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $nbArguments = count($_GET);
-        echo "Le nombre d'arguments POST envoyé est : " . $nbArguments;
+    // Compter le nombre d'arguments GET
+    $nombreArguments = count($_GET);
+
+    // Afficher le nombre d'arguments GET
+    echo "<p>Le nombre d'arguments GET envoyé est : " . $nombreArguments . "</p>";
+
+    // Afficher les arguments GET et leurs valeurs
+    if ($nombreArguments > 0) {
+        echo "<ul>";
+        foreach ($_GET as $key => $value) {
+            echo "<li>" . htmlspecialchars($key) . " : " . htmlspecialchars($value) . "</li>";
+        }
+        echo "</ul>";
+    } else {
+        echo "<p>Aucun argument GET reçu.</p>";
     }
     ?>
 
