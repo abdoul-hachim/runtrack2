@@ -1,44 +1,84 @@
-<html lang="en">
+
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dessiner un Triangle</title>
 </head>
 <body>
-    <a href="test.php">test</a>
-    <a href="copie.php">copie</a>
-<form method="post" action="index.php">
-    <label for="largeur">largeur</label> : <input type="text" name="largeur" id="largeur">
-    <label for="hauteur"> hauteur</label> : <input type="text" name="hauteur" id="hauteur">
-    <input type="submit" value="envoyer">
+    <form method="post" action="">
+        Largeur: <input type="text" name="largeur"><br>
+        Hauteur: <input type="text" name="hauteur"><br>
+        <input type="submit" value="Dessiner">
     </form>
-    <?php
- if (isset($_POST['largeur']) && isset($_POST['hauteur'])) {
-    $largeur = intval($_POST['largeur']);
-    $hauteur = intval($_POST['hauteur']);
 
-    if ($largeur > 0 && $hauteur > 0) {
-        
-        for ($i = 1; $i <= $hauteur; $i++) {
-            echo str_repeat('&nbsp;&nbsp;', $hauteur - $i);
-            echo '/';
-            if ($i > 1) {
-                echo str_repeat('_', 2 * ($i - 1) );
+    <?php
+    if (isset($_POST['largeur']) && isset($_POST['hauteur'])) {
+        $largeur_str = $_POST['largeur'];
+        $hauteur_str = $_POST['hauteur'];
+
+        $largeur = 0;
+        $hauteur = 0;
+
+        // Conversion de la largeur
+        $i = 0;
+        while (isset($largeur_str[$i])) {
+            $char = $largeur_str[$i];
+            if ($char >= '0' && $char <= '9') {
+                $largeur = $largeur * 10 + ($char - '0');
+            } else {
+                $largeur = -1; // Valeur invalide si la chaîne contient des caractères non numériques
+                break;
             }
-            echo '\\<br>';
+            $i++;
         }
 
-        for ($i = 1; $i <= $hauteur; $i++) {
+        // Conversion de la hauteur
+        $i = 0;
+        while (isset($hauteur_str[$i])) {
+            $char = $hauteur_str[$i];
+            if ($char >= '0' && $char <= '9') {
+                $hauteur = $hauteur * 10 + ($char - '0');
+            } else {
+                $hauteur = -1; // Valeur invalide si la chaîne contient des caractères non numériques
+                break;
+            }
+            $i++;
+        }
+
+        if ($largeur > 0 && $hauteur > 0) {
+            // Dessiner le sommet du triangle
+            for ($i = 1; $i <= $hauteur; $i++) {
+                // Espaces avant la barre /
+                for ($j = 0; $j < $hauteur - $i; $j++) {
+                    echo '&nbsp&nbs';
+                }
+                echo '/';
+                
+                // Traits de soulignement entre / et \
+                if ($i > 1) {
+                    for ($k = 0; $k < 2 * ($i - 1); $k++) {
+                        echo '_';
+                    }
+                }
+                echo '\\<br>';
+            }
+
+            // Dessiner le rectangle sous le triangle
+            for ($i = 1; $i <= $hauteur; $i++) {
+                echo '|';
+                // Espaces à l'intérieur du rectangle
+                for ($j = 0; $j < $largeur - 2; $j++) {
+                    echo '&nbsp&nbsp';
+                }
+                echo '|<br>';
+            }
+            // Dessiner la base du rectangle
             echo '|';
-            echo str_repeat('&nbsp;&nbsp', $largeur -2);
+            for ($j = 0; $j < $largeur - 2; $j++) {
+                echo '_';
+            }
             echo '|<br>';
         }
-        echo '|';
-        echo str_repeat('_', $largeur - 2);
-        echo '|<br>';
-
-    } 
-} 
+    }
     ?>
 </body>
-</html>
