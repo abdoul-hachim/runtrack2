@@ -1,0 +1,8 @@
+.connect_form{
+    background-color: rgb(234, 175, 100);
+    margin: auto;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    padding: 1%;
+}
