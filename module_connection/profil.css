@@ -1,0 +1,18 @@
+header{
+    background-color: aquamarine;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 85px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+}
+section{
+    padding-top: 15px;
+margin: auto;
+width: 400px;
+}

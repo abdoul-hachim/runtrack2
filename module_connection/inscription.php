@@ -48,6 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Inscription</title>
+    <link rel="stylesheet" href="page_de_connexion.css">
 </head>
 <body>
     <h2>Formulaire d'Inscription</h2>
