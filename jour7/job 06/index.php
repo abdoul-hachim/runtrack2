@@ -25,7 +25,6 @@ function leetSpeak($str) {
             $result .= $char;
         }
     }
-
     // Retourner la chaîne convertie
     return $result;
 }
