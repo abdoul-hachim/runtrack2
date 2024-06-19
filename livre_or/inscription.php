@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ss", $login, $hashed_password);
 
         if ($stmt->execute()) {
-            header("Location: connexion.php");
+            header("Location: login.php");
             exit;
         } else {
             $error = "Une erreur est survenue lors de l'inscription.";

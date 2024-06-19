@@ -23,7 +23,7 @@
             Ceci est la page d'accueil. Vous pouvez vous inscrire ou vous 
             connecter pour accéder à plus de fonctionnalités.
         </p>
- 
+       
     </main>
 </body>
 </html>

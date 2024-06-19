@@ -1,11 +1,11 @@
 <?php
 session_start();
-include 'db_connection.php'; // Incluez votre fichier de connexion à la base de données
+include '_db_connection.php'; // Incluez votre fichier de connexion à la base de données
 
 // Récupérer les commentaires de la base de données
-$sql = "SELECT commentaires.commentaires, commentaires.created_at, utilisateures.nomutilisateur FROM commentaires 
-        JOIN utilisateurs ON commentaires.id_utilisateur = utlisateurs.id 
-        ORDER BY commentaires.created_at DESC";
+$sql = "SELECT commentaires.commentaires, commentaires.date, utilisateurs.login FROM commentaires 
+        JOIN utilisateurs ON commentaires.id_utilisateure = utilisateurs.id 
+        ORDER BY commentaires.date DESC";
 $result = $conn->query($sql);
 ?>
 
@@ -29,15 +29,15 @@ $result = $conn->query($sql);
     <main>
         <h1>Commentaires</h1>
         <?php if(isset($_SESSION['user_id'])): ?>
-            <a href="add_comment.php">Ajouter un commentaire</a>
+            <a href="add_coment.php">Ajouter un commentaire</a>
         <?php endif; ?>
 
         <?php if ($result->num_rows > 0): ?>
             <ul>
                 <?php while($row = $result->fetch_assoc()): ?>
                     <li>
-                        Posté le <?php echo date('d/m/Y', strtotime($row['created_at'])); ?> par <?php echo htmlspecialchars($row['username']); ?>:
-                        <p><?php echo htmlspecialchars($row['comment_text']); ?></p>
+                        Posté le <?php echo date('d/m/Y', strtotime($row['date'])); ?> par <?php echo htmlspecialchars($row['login']); ?>:
+                        <p><?php echo htmlspecialchars($row['commentaires']); ?></p>
                     </li>
                 <?php endwhile; ?>
             </ul>

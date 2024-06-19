@@ -8,11 +8,18 @@
 </head>
 <body>
 <header>
-    <h1>Bienvenue, <?php echo htmlspecialchars($_SESSION['login']); ?>!</h1>
+    <h1>Bienvenue, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h1>
     <nav>
         <a href="index.php">Accueil</a>
-        <a href="comment.php">Commentaires</a>
-        <a href="logout.php">Déconnexion</a>
+        <a href="coment.php">Commentaires</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+            <a href="add_coment.php">Ajouter un Commentaire</a>
+            <a href="profil.php">Modifier Profil</a>
+            <a href="logout.php">Déconnexion</a>
+        <?php else: ?>
+            <a href="login.php">Connexion</a>
+            <a href="inscription.php">Inscription</a>
+        <?php endif; ?>
     </nav>
 </header>
 </body>
